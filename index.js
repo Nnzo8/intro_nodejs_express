@@ -22,3 +22,8 @@ app.post('/submit',(req, res)=>{
     const data = req.body;
     res.send(`Received: ${JSON.stringify(data)}`);
 });
+
+app.use((req, res, next)=>{
+    console.log(`${req.method} ${req.url}`);
+    next();
+}); 
